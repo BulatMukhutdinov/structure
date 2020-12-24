@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'maven-publish'
 
 android {
     compileSdkVersion 30
@@ -10,8 +11,6 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -70,4 +69,18 @@ dependencies {
 
     //Utils
     implementation "com.jakewharton.timber:timber:4.7.1"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'tat.mukhutdinov.android'
+                artifactId = 'structure'
+                version = '1.0.0'
+            }
+        }
+    }
 }
