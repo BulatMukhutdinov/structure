@@ -1,3 +1,5 @@
+[![Release](https://jitpack.io/v/BulatMukhutdinov/structure.svg)](https://jitpack.io/#BulatMukhutdinov/structure)
+
 # Purpose
 Base structure for MVVM
 
