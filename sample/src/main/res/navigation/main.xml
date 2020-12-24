@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    app:startDestination="@id/usersList">
+
+
+    <fragment
+        android:id="@+id/usersList"
+        android:name="tat.mukhutdinov.android.structure.sample.usersList.ui.UsersListFragment"
+        android:label="UserList"
+        tools:layout="@layout/users_list">
+
+        <action
+            android:id="@+id/toUser"
+            app:destination="@id/user"
+            app:enterAnim="@anim/rtl_nav_enter"
+            app:exitAnim="@anim/rtl_nav_exit"
+            app:popEnterAnim="@anim/rtl_nav_pop_enter"
+            app:popExitAnim="@anim/rtl_nav_pop_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/user"
+        android:name="tat.mukhutdinov.android.structure.sample.user.ui.UserFragment"
+        android:label="User"
+        tools:layout="@layout/user">
+
+        <argument
+            android:name="user"
+            app:argType="tat.mukhutdinov.android.structure.sample.user.domain.data.model.User" />
+    </fragment>
+</navigation>
