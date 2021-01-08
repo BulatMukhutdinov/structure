@@ -19,5 +19,5 @@ Add jitpack repository to *project-level* build.gradle
 Add dependency to *app-level* build.gradle
 
 ```
-implementation 'com.github.bulatmukhutdinov:structure:1.0.0'
+implementation 'com.github.bulatmukhutdinov:structure:<latest_version>'
 ```
