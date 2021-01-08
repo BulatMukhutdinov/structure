@@ -1,7 +1,7 @@
 buildscript {
     ext.kotlin_version = '1.4.21'
     ext.nav_version = "2.3.2"
-    ext.koin_version = '2.2.2'
+    ext.koin_version = '3.0.0-alpha-4'
     ext.coroutines_version = '1.4.2'
     ext.fragments_version = '1.2.5'
 
@@ -22,6 +22,7 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
+        maven { url 'https://dl.bintray.com/ekito/koin' }
     }
 }
 

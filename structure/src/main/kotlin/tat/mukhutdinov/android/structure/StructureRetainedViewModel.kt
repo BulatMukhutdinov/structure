@@ -6,13 +6,12 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
-import org.koin.android.viewmodel.ViewModelOwner
 import org.koin.android.viewmodel.dsl.setIsViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
-import org.koin.core.component.KoinComponent
-import org.koin.core.component.inject
+import org.koin.core.KoinComponent
 import org.koin.core.definition.BeanDefinition
 import org.koin.core.definition.Definition
+import org.koin.core.inject
 import org.koin.core.module.Module
 import org.koin.core.parameter.ParametersDefinition
 import org.koin.core.qualifier.TypeQualifier
@@ -43,12 +42,9 @@ abstract class StructureRetainedViewModel : ViewModel(), KoinComponent, Coroutin
     }
 }
 
+@Suppress("UNCHECKED_CAST")
 inline fun <reified T : Any> Fragment.viewModel(noinline parameters: ParametersDefinition? = null): Lazy<T> {
-    val viewModel = viewModel<ViewModel>(
-        qualifier = TypeQualifier(T::class),
-        owner = { ViewModelOwner.from(this) },
-        parameters = parameters
-    )
+    val viewModel = viewModel<ViewModel>(TypeQualifier(T::class), parameters)
 
     return viewModel as Lazy<T>
 }
