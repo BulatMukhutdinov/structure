@@ -1,7 +1,4 @@
-package tat.mukhutdinov.android.structure.sample.infrastructure.util
-
-import tat.mukhutdinov.android.structure.Dispatchers
-
+package tat.mukhutdinov.android.structure
 
 class AppDispatchers : Dispatchers {
 

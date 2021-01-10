@@ -1,8 +1,8 @@
 package tat.mukhutdinov.android.structure
 
 /**
- *  Некоторым классам, например для @[StructureFragment], требуется сгенерированный класс @[BR]
- *  и переменные в нем, чтобы сеттить эти переменные в layout для data binding.
- *  @[Dummy] используется как заглушка для генерации необходимых переменных
+ *  Some classes like [StructureFragment] require generated [BR] class
+ *  and its variables to set these variables in the layout for the data binding.
+ *  [Dummy] is used as a stub to generate the required variables
  */
 interface Dummy
