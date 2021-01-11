@@ -21,7 +21,7 @@ import kotlin.coroutines.CoroutineContext
 
 abstract class StructureRetainedViewModel : ViewModel(), KoinComponent, CoroutineScope, StructureViewModel {
 
-    private val dispatchers: Dispatchers by inject()
+    protected val dispatchers: Dispatchers by inject()
 
     private val exceptionHandler = CoroutineExceptionHandler { context, throwable ->
         handleCoroutineException(context, throwable)
