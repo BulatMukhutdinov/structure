@@ -9,13 +9,13 @@ import tat.mukhutdinov.android.structure.sample.user.domain.data.UserConverter
 import tat.mukhutdinov.android.structure.sample.user.domain.data.model.User
 import tat.mukhutdinov.android.structure.sample.user.ui.UserRetainedViewModel
 import tat.mukhutdinov.android.structure.sample.user.ui.boundary.UserViewModel
-import tat.mukhutdinov.android.structure.viewModel
+import tat.mukhutdinov.android.structure.structureViewModel
 
 object UserModule {
 
     val module = module {
 
-        viewModel<UserViewModel> { (user: User) ->
+        structureViewModel<UserViewModel> { (user: User) ->
             UserRetainedViewModel(user)
         }
 

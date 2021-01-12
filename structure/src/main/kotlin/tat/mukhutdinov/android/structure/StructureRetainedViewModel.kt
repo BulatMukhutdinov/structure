@@ -43,13 +43,13 @@ abstract class StructureRetainedViewModel : ViewModel(), KoinComponent, Coroutin
 }
 
 @Suppress("UNCHECKED_CAST")
-inline fun <reified T : Any> Fragment.viewModel(noinline parameters: ParametersDefinition? = null): Lazy<T> {
+inline fun <reified T : Any> Fragment.structureViewModel(noinline parameters: ParametersDefinition? = null): Lazy<T> {
     val viewModel = viewModel<ViewModel>(TypeQualifier(T::class), parameters)
 
     return viewModel as Lazy<T>
 }
 
-inline fun <reified T> Module.viewModel(override: Boolean = false, noinline definition: Definition<ViewModel>): BeanDefinition<ViewModel> {
+inline fun <reified T> Module.structureViewModel(override: Boolean = false, noinline definition: Definition<ViewModel>): BeanDefinition<ViewModel> {
     val beanDefinition = factory(TypeQualifier(T::class), override, definition)
     beanDefinition.setIsViewModel()
     return beanDefinition
