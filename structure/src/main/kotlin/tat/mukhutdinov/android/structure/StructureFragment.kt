@@ -59,6 +59,8 @@ abstract class StructureFragment<ViewBinding : ViewDataBinding> : Fragment() {
     }
 
     open fun navigateUp() {
-        findNavController().navigateUp()
+        if (!findNavController().popBackStack()) {
+            activity?.finish()
+        }
     }
 }
