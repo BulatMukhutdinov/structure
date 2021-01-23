@@ -48,7 +48,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation "com.github.bulatmukhutdinov:utils:1.5.0"
+    implementation "com.github.bulatmukhutdinov:utils:1.5.1"
 
     //Koin
     implementation "org.koin:koin-android:$koin_version"
@@ -71,7 +71,7 @@ afterEvaluate {
 
                 groupId = 'tat.mukhutdinov.android'
                 artifactId = 'structure'
-                version = '2.2.0'
+                version = '3.0.0'
             }
         }
     }

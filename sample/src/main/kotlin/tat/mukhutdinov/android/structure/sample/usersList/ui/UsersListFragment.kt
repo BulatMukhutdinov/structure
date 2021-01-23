@@ -2,16 +2,16 @@ package tat.mukhutdinov.android.structure.sample.usersList.ui
 
 import android.os.Bundle
 import android.view.View
+import org.koin.android.viewmodel.ext.android.viewModel
 import tat.mukhutdinov.android.structure.StructureFragment
 import tat.mukhutdinov.android.structure.sample.databinding.UsersListBinding
 import tat.mukhutdinov.android.structure.sample.usersList.ui.boundary.UsersListViewModel
 import tat.mukhutdinov.android.structure.sample.usersList.ui.recycler.UsersListAdapter
-import tat.mukhutdinov.android.structure.structureViewModel
 import tat.mukhutdinov.android.utils.autoCleared
 
 class UsersListFragment : StructureFragment<UsersListBinding>() {
 
-    override val viewModel: UsersListViewModel by structureViewModel()
+    override val viewModel: UsersListViewModel by viewModel()
 
     private var adapter: UsersListAdapter by autoCleared()
 

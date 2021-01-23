@@ -4,7 +4,7 @@ import android.net.Uri
 import androidx.lifecycle.LiveData
 import tat.mukhutdinov.android.structure.StructureViewModel
 
-interface UserViewModel : StructureViewModel {
+abstract class UserViewModel : StructureViewModel() {
 
-    val openUrl: LiveData<Uri>
+    abstract val openUrl: LiveData<Uri>
 }

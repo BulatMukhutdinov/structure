@@ -5,9 +5,9 @@ import tat.mukhutdinov.android.structure.StructureViewModel
 import tat.mukhutdinov.android.structure.sample.user.domain.data.model.User
 import tat.mukhutdinov.android.structure.sample.usersList.ui.recycler.UsersListAdapter
 
-interface UsersListViewModel : StructureViewModel {
+abstract class UsersListViewModel : StructureViewModel() {
 
-    val users: LiveData<List<User>>
+    abstract val users: LiveData<List<User>>
 
-    fun createAdapter(): UsersListAdapter
+    abstract fun createAdapter(): UsersListAdapter
 }
