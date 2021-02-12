@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="tat.mukhutdinov.android.structure.Dummy" />
+            type="tat.mukhutdinov.android.structure.DummyBindings" />
     </data>
 
     <FrameLayout
