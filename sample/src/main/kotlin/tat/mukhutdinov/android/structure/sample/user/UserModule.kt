@@ -1,6 +1,6 @@
 package tat.mukhutdinov.android.structure.sample.user
 
-import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import tat.mukhutdinov.android.structure.sample.user.domain.UserInteractor

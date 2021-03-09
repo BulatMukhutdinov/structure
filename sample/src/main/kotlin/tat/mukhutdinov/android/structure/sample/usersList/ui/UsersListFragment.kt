@@ -2,7 +2,7 @@ package tat.mukhutdinov.android.structure.sample.usersList.ui
 
 import android.os.Bundle
 import android.view.View
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import tat.mukhutdinov.android.structure.StructureFragment
 import tat.mukhutdinov.android.structure.sample.databinding.UsersListBinding
 import tat.mukhutdinov.android.structure.sample.usersList.ui.boundary.UsersListViewModel
