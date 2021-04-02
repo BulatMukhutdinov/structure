@@ -31,7 +31,8 @@ abstract class StructureFragment<ViewBinding : ViewDataBinding> : Fragment() {
 
     @Suppress("UNCHECKED_CAST")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val viewBindingClass: Class<ViewBinding> = (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments.first() as Class<ViewBinding>
+        val viewBindingClass: Class<ViewBinding> =
+            (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments.first() as Class<ViewBinding>
 
         viewBinding = viewBindingClass.getMethod("inflate", LayoutInflater::class.java, ViewGroup::class.java, Boolean::class.java)
             .invoke(null, inflater, container, false) as ViewBinding
@@ -59,8 +60,12 @@ abstract class StructureFragment<ViewBinding : ViewDataBinding> : Fragment() {
     }
 
     open fun navigateUp() {
-        if (!findNavController().popBackStack()) {
-            activity?.finish()
+        try {
+            if (!findNavController().popBackStack()) {
+                activity?.finish()
+            }
+        } catch (exception: IllegalArgumentException) {
+            Timber.w(exception)
         }
     }
 }
