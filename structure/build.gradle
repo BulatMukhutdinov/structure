@@ -51,9 +51,8 @@ dependencies {
     implementation "com.github.bulatmukhutdinov:utils:1.6.1"
 
     //Koin
-    implementation "org.koin:koin-android:$koin_version"
-    implementation "org.koin:koin-android-viewmodel:$koin_version"
-    implementation "org.koin:koin-android-ext:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    implementation "io.insert-koin:koin-android-ext:$koin_version"
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -71,7 +70,7 @@ afterEvaluate {
 
                 groupId = 'tat.mukhutdinov.android'
                 artifactId = 'structure'
-                version = '3.0.3'
+                version = '3.1.1'
             }
         }
     }

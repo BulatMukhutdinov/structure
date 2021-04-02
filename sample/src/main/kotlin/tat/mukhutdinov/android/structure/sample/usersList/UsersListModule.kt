@@ -1,6 +1,6 @@
 package tat.mukhutdinov.android.structure.sample.usersList
 
-import org.koin.android.viewmodel.dsl.viewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import tat.mukhutdinov.android.structure.sample.usersList.domain.UsersListInteractor
 import tat.mukhutdinov.android.structure.sample.usersList.domain.boundary.UsersListDomain
