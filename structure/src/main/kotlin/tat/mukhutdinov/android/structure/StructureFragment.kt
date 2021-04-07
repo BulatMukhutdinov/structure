@@ -53,7 +53,7 @@ abstract class StructureFragment<ViewBinding : ViewDataBinding> : Fragment() {
         activity?.runOnUiThread {
             try {
                 findNavController().navigate(directions)
-            } catch (exception: IllegalArgumentException) {
+            } catch (exception: Exception) {
                 Timber.w(exception)
             }
         }
@@ -64,7 +64,7 @@ abstract class StructureFragment<ViewBinding : ViewDataBinding> : Fragment() {
             if (!findNavController().popBackStack()) {
                 activity?.finish()
             }
-        } catch (exception: IllegalArgumentException) {
+        } catch (exception: Exception) {
             Timber.w(exception)
         }
     }
