@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
+import androidx.navigation.Navigator
 import androidx.navigation.fragment.findNavController
 import tat.mukhutdinov.android.utils.autoCleared
 import timber.log.Timber
@@ -23,7 +24,7 @@ abstract class StructureFragment<ViewBinding : ViewDataBinding> : Fragment() {
 
         viewModel.navigation.observe(this) {
             when (it) {
-                is Navigation.To -> navigate(it.directions)
+                is Navigation.To -> navigate(it.directions, it.extras)
                 is Navigation.Up -> navigateUp()
             }
         }
@@ -48,11 +49,11 @@ abstract class StructureFragment<ViewBinding : ViewDataBinding> : Fragment() {
         viewBinding.lifecycleOwner = viewLifecycleOwner
     }
 
-    open fun navigate(directions: NavDirections) {
+    open fun navigate(directions: NavDirections, extras: Navigator.Extras) {
         // Показ диалогов через navigation падает при вызове на бекграунд потоке
         activity?.runOnUiThread {
             try {
-                findNavController().navigate(directions)
+                findNavController().navigate(directions, extras)
             } catch (exception: Exception) {
                 Timber.w(exception)
             }

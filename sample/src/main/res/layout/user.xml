@@ -22,7 +22,6 @@
             android:onClick="@{() -> bindings.onBackClicked()}"
             android:padding="16dp"
             android:src="@drawable/ic_arrow_back"
-            android:tint="?android:attr/colorPrimary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
