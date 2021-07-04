@@ -8,6 +8,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import tat.mukhutdinov.android.utils.autoCleared
 import timber.log.Timber
@@ -49,7 +50,7 @@ abstract class StructureFragment<ViewBinding : ViewDataBinding> : Fragment() {
         viewBinding.lifecycleOwner = viewLifecycleOwner
     }
 
-    open fun navigate(directions: NavDirections, extras: Navigator.Extras) {
+    open fun navigate(directions: NavDirections, extras: Navigator.Extras = FragmentNavigatorExtras()) {
         // Показ диалогов через navigation падает при вызове на бекграунд потоке
         activity?.runOnUiThread {
             try {
